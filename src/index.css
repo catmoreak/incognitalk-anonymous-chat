@@ -1,0 +1,85 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%; /* Dark blue background */
+    --foreground: 210 40% 98%; /* Light text */
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%; /* Bright blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 34% 20%; /* Slightly lighter than background */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 34% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%; /* Blue accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 34% 20%;
+    --input: 220 34% 20%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-blue-950 text-foreground;
+  }
+  
+  /* Custom scrollbar for the blue theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-blue-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-700 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-600;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply rounded-lg px-4 py-2 my-1 max-w-[80%] break-words;
+  }
+  
+  .chat-message-self {
+    @apply bg-blue-600 text-white ml-auto;
+  }
+  
+  .chat-message-other {
+    @apply bg-blue-800 text-white mr-auto;
+  }
+  
+  .button-primary {
+    @apply bg-blue-600 hover:bg-opacity-80 text-white px-4 py-2 rounded-md transition-all duration-200;
+  }
+  
+  .input-primary {
+    @apply bg-blue-800 border border-blue-700 text-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+}
